@@ -22,10 +22,6 @@ You deploy this project to [Cloudflare Workers](https://workers.cloudflare.com/)
 2. Log in via OAuth: `wrangler login` or use an access token: `wrangler config`
 3. Publish to Cloudflare Workers: `wrangler publish` (you might need to configure your `account_id` and `zone_id` in `wrangler.toml`)
 
-The worker serves the following routes:
-
-- `/` - returns `ui.html` without any further processing
-- `/api/game/:gameId` - can be used to start a WebSocket connection for the game `gameId`
 
 ## License
 
