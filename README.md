@@ -1,4 +1,4 @@
-# xo.JesseJesse.com
+# <a href="https://xo.JesseJesse.com">xo.JesseJesse.com</a>
 # ![IMG_2603](https://github.com/sudo-self/xo.JesseJesse.com/assets/119916323/750e04cf-fb0c-4d46-bdfe-a19a4c9243cc)
 
 This is an implementation of the game [tic tac toe](https://en.wikipedia.org/wiki/Tic-tac-toe) that allows playing with others across the internet. It is built with vanilla JavaScript, HTML and CSS on the client side and uses [Cloudflare Workers](https://workers.cloudflare.com/) (serverless functions) and their [Durable Objects](https://blog.cloudflare.com/introducing-workers-durable-objects/) (state management) on the server side. The client and the server communicate via [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) to allow playing with minimal latency.
