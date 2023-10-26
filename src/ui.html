@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>xo.JesseJesse.com</title>
+    <style>
+      #board button {
+        width: 100px;
+        height: 100px;
+        border: 1px dotted rgb(143, 141, 141);
+        transition: box-shadow 0.5s;
+        margin: 4px;
+      }
+
+      #board button[data-color='red'] {
+        background-color: rgb(166, 0, 0);
+      }
+
+      #board button[data-color='blue'] {
+        background-color: rgb(3, 3, 160);
+      }
+
+      #board.myturn button[data-color='none'] {
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35);
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        text-align: center;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      xo.JesseJesse.com
+      <h1><svg width="564.1274902343749px" height="139.17001953124998px" xmlns="http://www.w3.org/2000/svg" viewBox="-32.063745117187466 5.414990234375011 564.1274902343749 139.17001953124998" style="background: rgba(0, 0, 0, 0);" preserveAspectRatio="xMidYMid"><defs><linearGradient id="editing-sticker-gradient" x1="0.5" y1="0.2" x2="0.5" y2="0.8"><stop offset="0" stop-color="#eb0505"></stop><stop offset="1" stop-color="#0061ee"></stop></linearGradient><filter id="editing-sticker" x="-100%" y="-100%" width="300%" height="300%"><feMorphology operator="erode" radius="1" in="SourceAlpha" result="alpha-erode"></feMorphology><feConvolveMatrix order="3,3" divisor="1" kernelMatrix="0 1 0 1 1 1 0 1 0" in="alpha-erode" result="alpha-round"></feConvolveMatrix><feMorphology operator="dilate" radius="3.5" in="alpha-round" result="dilate-shadow"></feMorphology><feGaussianBlur in="dilate-shadow" stdDeviation="1.5" result="shadow"></feGaussianBlur><feFlood flood-color="#fff" result="flood-sticker"></feFlood><feComposite operator="in" in="flood-sticker" in2="alpha-round" result="comp-sticker"></feComposite><feMorphology operator="dilate" radius="3" in="comp-sticker" result="morph-sticker"></feMorphology><feConvolveMatrix order="3,3" divisor="1" kernelMatrix="0 1 0 1 1 1 0 1 0" in="morph-sticker" result="sticker"></feConvolveMatrix><feMerge><feMergeNode in="shadow"></feMergeNode><feMergeNode in="sticker"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter></defs><g filter="url(#editing-sticker)"><g transform="translate(33.455007553100586, 100.34500122070312)"><path d="M68.22-49.79L68.22-34.30L57.22-34.30L57.22-39.30L53.12-39.30L53.12-10.50L57.60-10.50L57.60 0L30.72 0L30.72-10.50L35.20-10.50L35.20-39.30L31.10-39.30L31.10-34.30L20.10-34.30L20.10-49.79L68.22-49.79ZM86.40-39.10L73.34-39.10L73.34-49.79L86.40-49.79L86.40-39.10ZM90.62 0L70.27 0L70.27-10.50L73.09-10.50L73.09-25.09L70.27-25.09L70.27-35.58L87.81-35.58L87.81-10.50L90.62-10.50L90.62 0ZM111.55 0.90L111.55 0.90Q102.40 0.90 97.28-3.87L97.28-3.87L97.28-3.87Q92.16-8.64 92.16-17.79L92.16-17.79L92.16-17.79Q92.16-26.94 97.28-31.71L97.28-31.71L97.28-31.71Q102.40-36.48 111.49-36.48L111.49-36.48L111.49-36.48Q115.90-36.48 119.94-35.26L119.94-35.26L119.94-35.26Q123.97-34.05 126.21-32.51L126.21-32.51L126.21-19.84L115.20-19.84L115.20-20.99L115.20-20.99Q115.20-23.10 114.30-24.10L114.30-24.10L114.30-24.10Q113.41-25.09 111.49-25.09L111.49-25.09L111.49-25.09Q107.78-25.09 107.78-20.99L107.78-20.99L107.78-15.49L107.78-15.49Q107.78-10.50 113.47-10.50L113.47-10.50L113.47-10.50Q118.78-10.50 125.82-11.65L125.82-11.65L125.82-1.60L125.82-1.60Q123.65-0.64 119.71 0.13L119.71 0.13L119.71 0.13Q115.78 0.90 111.55 0.90L111.55 0.90ZM195.46-49.79L195.46-34.30L184.45-34.30L184.45-39.30L180.35-39.30L180.35-10.50L184.83-10.50L184.83 0L157.95 0L157.95-10.50L162.43-10.50L162.43-39.30L158.34-39.30L158.34-34.30L147.33-34.30L147.33-49.79L195.46-49.79ZM230.98-10.50L233.79-10.50L233.79 0L216.90 0L216.90-4.35L216.90-4.35Q215.49-2.30 212.96-0.70L212.96-0.70L212.96-0.70Q210.43 0.90 206.78 0.90L206.78 0.90L206.78 0.90Q201.98 0.90 199.23-1.66L199.23-1.66L199.23-1.66Q196.48-4.22 196.48-8.90L196.48-8.90L196.48-8.90Q196.48-20.99 217.02-21.31L217.02-21.31L217.02-21.31Q216.83-23.49 215.36-24.29L215.36-24.29L215.36-24.29Q213.89-25.09 210.37-25.09L210.37-25.09L210.37-25.09Q207.49-25.09 204.19-24.48L204.19-24.48L204.19-24.48Q200.90-23.87 198.14-22.85L198.14-22.85L198.14-34.62L198.14-34.62Q201.54-35.46 205.50-35.97L205.50-35.97L205.50-35.97Q209.47-36.48 213.25-36.48L213.25-36.48L213.25-36.48Q222.78-36.48 226.88-33.02L226.88-33.02L226.88-33.02Q230.98-29.57 230.98-22.34L230.98-22.34L230.98-10.50ZM216.90-14.59L216.90-14.98L216.90-14.98Q214.02-14.98 212.45-14.21L212.45-14.21L212.45-14.21Q210.88-13.44 210.88-11.65L210.88-11.65L210.88-11.65Q210.88-10.56 211.55-9.89L211.55-9.89L211.55-9.89Q212.22-9.22 213.44-9.22L213.44-9.22L213.44-9.22Q215.10-9.22 216.00-10.62L216.00-10.62L216.00-10.62Q216.90-12.03 216.90-14.59L216.90-14.59ZM254.98 0.90L254.98 0.90Q245.82 0.90 240.70-3.87L240.70-3.87L240.70-3.87Q235.58-8.64 235.58-17.79L235.58-17.79L235.58-17.79Q235.58-26.94 240.70-31.71L240.70-31.71L240.70-31.71Q245.82-36.48 254.91-36.48L254.91-36.48L254.91-36.48Q259.33-36.48 263.36-35.26L263.36-35.26L263.36-35.26Q267.39-34.05 269.63-32.51L269.63-32.51L269.63-19.84L258.62-19.84L258.62-20.99L258.62-20.99Q258.62-23.10 257.73-24.10L257.73-24.10L257.73-24.10Q256.83-25.09 254.91-25.09L254.91-25.09L254.91-25.09Q251.20-25.09 251.20-20.99L251.20-20.99L251.20-15.49L251.20-15.49Q251.20-10.50 256.90-10.50L256.90-10.50L256.90-10.50Q262.21-10.50 269.25-11.65L269.25-11.65L269.25-1.60L269.25-1.60Q267.07-0.64 263.14 0.13L263.14 0.13L263.14 0.13Q259.20 0.90 254.98 0.90L254.98 0.90ZM338.88-49.79L338.88-34.30L327.87-34.30L327.87-39.30L323.78-39.30L323.78-10.50L328.26-10.50L328.26 0L301.38 0L301.38-10.50L305.86-10.50L305.86-39.30L301.76-39.30L301.76-34.30L290.75-34.30L290.75-49.79L338.88-49.79ZM355.52 0.90L355.52 0.90Q346.43 0.90 341.31-3.87L341.31-3.87L341.31-3.87Q336.19-8.64 336.19-17.79L336.19-17.79L336.19-17.79Q336.19-26.94 341.31-31.71L341.31-31.71L341.31-31.71Q346.43-36.48 355.52-36.48L355.52-36.48L355.52-36.48Q364.74-36.48 369.79-31.65L369.79-31.65L369.79-31.65Q374.85-26.82 374.85-17.79L374.85-17.79L374.85-17.79Q374.85-8.64 369.73-3.87L369.73-3.87L369.73-3.87Q364.61 0.90 355.52 0.90L355.52 0.90ZM355.52-10.50L355.52-10.50Q357.38-10.50 358.30-11.49L358.30-11.49L358.30-11.49Q359.23-12.48 359.23-14.59L359.23-14.59L359.23-20.99L359.23-20.99Q359.23-23.10 358.30-24.10L358.30-24.10L358.30-24.10Q357.38-25.09 355.52-25.09L355.52-25.09L355.52-25.09Q353.66-25.09 352.74-24.10L352.74-24.10L352.74-24.10Q351.81-23.10 351.81-20.99L351.81-20.99L351.81-14.59L351.81-14.59Q351.81-12.48 352.74-11.49L352.74-11.49L352.74-11.49Q353.66-10.50 355.52-10.50L355.52-10.50ZM395.97 0.90L395.97 0.90Q386.88 0.90 381.76-3.87L381.76-3.87L381.76-3.87Q376.64-8.64 376.64-17.79L376.64-17.79L376.64-17.79Q376.64-26.94 381.76-31.71L381.76-31.71L381.76-31.71Q386.88-36.48 395.97-36.48L395.97-36.48L395.97-36.48Q404.99-36.48 408.99-31.78L408.99-31.78L408.99-31.78Q412.99-27.07 412.99-20.10L412.99-20.10L412.99-15.49L392.26-15.49L392.26-15.10L392.26-15.10Q392.26-12.74 393.66-11.62L393.66-11.62L393.66-11.62Q395.07-10.50 398.34-10.50L398.34-10.50L398.34-10.50Q402.24-10.50 405.76-11.07L405.76-11.07L405.76-11.07Q409.28-11.65 411.90-12.54L411.90-12.54L411.90-2.30L411.90-2.30Q409.66-1.09 405.34-0.10L405.34-0.10L405.34-0.10Q401.02 0.90 395.97 0.90L395.97 0.90ZM392.26-22.53L399.68-22.53L399.68-23.30L399.68-23.30Q399.68-25.47 398.75-26.43L398.75-26.43L398.75-26.43Q397.82-27.39 395.97-27.39L395.97-27.39L395.97-27.39Q394.11-27.39 393.18-26.40L393.18-26.40L393.18-26.40Q392.26-25.41 392.26-23.30L392.26-23.30L392.26-22.53Z" fill="url(#editing-sticker-gradient)" stroke="#040404" stroke-width="4"></path></g></g><style>text {
+  font-size: 64px;
+  font-family: Arial Black;
+  dominant-baseline: central;
+  text-anchor: middle;
+      }</style></svg><br></h1>
+
+      <form id="joinGameForm">
+        <label for="gameNameInput">Game ID:</label>
+        <input
+          type="text"
+          name="gameName"
+          id="gameNameInput"
+          value="719"
+        />
+        <button type="submit">Join or Create Game</button>
+      </form>
+
+      <br />
+
+      <div id="gameContainer" class="hidden">
+        Your color: <span id="myColor">???</span>.
+        <span id="instruction">Waiting for an opponent to join...</span>
+        <button id="reset" class="hidden">Reset</button>
+
+        <br />
+
+        <div id="board">
+          <!-- will be created dynamically -->
+        </div>
+
+        <br />
+      </div>
+      made with &hearts;&nbsp;by&nbsp;<a href="https://twitter.com/ilostmyipad/">@iLostmyipad</a>
+    </div>
+
+    <script>
+      const joinGameForm = document.getElementById('joinGameForm');
+      const myColorSpan = document.getElementById('myColor');
+      const instructionSpan = document.getElementById('instruction');
+      const boardContainer = document.getElementById('board');
+      const gameContainer = document.getElementById('gameContainer');
+      const resetButton = document.getElementById('reset');
+
+      const state = {
+        ready: false,
+        playerCount: 1,
+        fieldValues: [
+          ['none', 'none', 'none'],
+          ['none', 'none', 'none'],
+          ['none', 'none', 'none'],
+        ],
+        turn: 'none',
+        winner: null,
+        color: 'none',
+      };
+
+      /**
+       * Holds the web socket that connects to the current game instance.
+       * @type {WebSocket}
+       */
+      let currentWebSocket = null;
+
+      /**
+       * Applies the colors from the state to the game board. This should be called whenever any field color changes.
+       */
+      function updateBoardColors() {
+        state.fieldValues.forEach((rowArray, rowNum) => {
+          rowArray.forEach((value, colNum) => {
+            fields[rowNum][colNum].dataset.color = value;
+          });
+        });
+      }
+
+      /**
+       * Updates the instructions for the player, based on state data. This should be called on every state change.
+       */
+      function updateInstruction() {
+        let text = '';
+        let myTurn = false;
+
+        if (!state.ready) {
+          // waiting for data
+          text = 'Waiting for data...';
+          myTurn = false;
+        } else if (state.playerCount === 1) {
+          // not waiting for data, paused
+          text = 'Waiting for an opponent to join...';
+          myTurn = false;
+        } else if (state.winner !== null) {
+          // not waiting for data, not paused, game over
+          text = `Game over: ${
+            state.winner === 'none' ? 'nobody' : state.winner
+          } Victory!`;
+          myTurn = false;
+        } else if (state.turn === state.color) {
+          // not waiting for data, not paused, not game over, my turn
+          text = "It's your turn!";
+          myTurn = true;
+        } else {
+          // not waiting for data, not paused, not game over, not my turn
+          text = `Waiting for ${state.turn} to make their move...`;
+          myTurn = false;
+        }
+
+        instructionSpan.innerText = text;
+        if (myTurn) {
+          boardContainer.classList.add('myturn');
+        } else {
+          boardContainer.classList.remove('myturn');
+        }
+      }
+
+      /**
+       * Updates the color display and enables/disables capabilities based on the player color.
+       */
+      function updateColor() {
+        myColorSpan.innerText = state.color;
+        if (state.color !== 'none') {
+          resetButton.classList.remove('hidden');
+        } else {
+          state.color.classList.add('hidden');
+        }
+      }
+
+      async function joinGame(gameName) {
+        const newSocket = new WebSocket(
+          `${window.location.protocol === 'https:' ? 'wss' : 'ws'}://${
+            window.location.hostname
+          }:${window.location.port}/api/game/${gameName}`,
+        );
+        newSocket.addEventListener('open', (event) => {
+          currentWebSocket = newSocket;
+          instructionSpan.innerText = 'Connected, waiting for game data...'; //TODO reset
+          gameContainer.classList.remove('hidden');
+        });
+        newSocket.addEventListener('message', (event) => {
+          const message = JSON.parse(event.data);
+
+          switch (message.type) {
+            case 'color':
+              state.color = message.color;
+
+              updateInstruction();
+              updateColor();
+              break;
+            case 'state':
+              state.fieldValues = message.fields;
+              state.turn = message.turn;
+              state.winner = message.winner;
+
+              updateInstruction();
+              updateBoardColors();
+              break;
+            case 'players':
+              state.playerCount = message.playerCount;
+              state.ready = true;
+
+              updateInstruction();
+              break;
+            default:
+              alert('Received invalid message: ' + event.data);
+              break;
+          }
+        });
+        newSocket.addEventListener('error', (event) => {
+          alert(`Error in web socket: ${event.toString()}`);
+          console.dir(event);
+          currentWebSocket.close(1000);
+        });
+        newSocket.addEventListener('close', (event) => {
+          gameContainer.classList.remove('hidden');
+          currentWebSocket = null;
+          state.ready = false;
+          alert('Disconnected!');
+        });
+      }
+
+      /**
+       * @param {SubmitEvent} event#
+       */
+      function clickJoinGame(event) {
+        let gameName = document.getElementById('gameNameInput').value;
+        if (!/^[0-9a-zA-Z]+$/.test(gameName)) {
+          alert('Hey! what are u thinking? you can only use letters and numbers.');
+        } else {
+          if (currentWebSocket !== null) {
+            gameContainer.classList.add('hidden');
+            currentWebSocket.close(1000);
+            currentWebSocket = null;
+          }
+          joinGame(gameName);
+        }
+        return false; // cancel submission
+      }
+
+      joinGameForm.onsubmit = clickJoinGame;
+
+      function clickField(element, rowNum, colNum) {
+        if (boardContainer.classList.contains('myturn')) {
+          currentWebSocket.send(
+            JSON.stringify({ type: 'move', row: rowNum, col: colNum }),
+          );
+        }
+      }
+
+      /** @type HTMLElement[][] */
+      const fields = [];
+      for (let row = 0; row < 3; row++) {
+        fields.push([]);
+        let rowDiv = document.createElement('div');
+        boardContainer.appendChild(rowDiv);
+        for (let col = 0; col < 3; col++) {
+          let el = document.createElement('button');
+          el.onclick = (event) => clickField(el, row, col);
+          el.dataset.color = 'none';
+          fields[row].push(el);
+          rowDiv.appendChild(el);
+        }
+      }
+
+      function clickReset() {
+        currentWebSocket.send(JSON.stringify({ type: 'reset' }));
+      }
+
+      resetButton.onclick = clickReset;
+    </script>
+  </body>
+</html>
