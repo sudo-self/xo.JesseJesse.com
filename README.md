@@ -1,5 +1,7 @@
 # <a href="https://xo.JesseJesse.com">xo.JesseJesse.com</a>&nbsp;[![Node.js CI](https://github.com/sudo-self/xo.JesseJesse.com/actions/workflows/node.js.yml/badge.svg?branch=main)](https://github.com/sudo-self/xo.JesseJesse.com/actions/workflows/node.js.yml)
 ![IMG_2603](https://github.com/sudo-self/xo.JesseJesse.com/assets/119916323/eb457a9c-32a0-4092-8026-15905506abb9)
+![IMG_3095](https://github.com/sudo-self/xo.JesseJesse.com/assets/119916323/18a508cb-0e42-402d-838a-1b335d80cf18)
+
 <blockquote class="twitter-tweet"><p lang="zxx" dir="ltr"><a href="https://t.co/mJ3mz6Y9sA">https://t.co/mJ3mz6Y9sA</a> <a href="https://t.co/d93e0gdTF4">pic.twitter.com/d93e0gdTF4</a></p>&mdash; Jesse Roper (@ilostmyipad) <a href="https://twitter.com/ilostmyipad/status/1717896477928755582?ref_src=twsrc%5Etfw">October 27, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 ## Try it out
 
